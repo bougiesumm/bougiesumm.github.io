@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bougies Univers MM - Bougies artisanales naturelles</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #ff6b6b;
+            --secondary-color: #97299b;
+            --text-color: #2d3436;
+            --bg-color: #f9f7f7;
+            --accent-color: #feca57;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        nav {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .logo a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .logo a:hover {
+            color: var(--text-color);
+        }
+
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .hero {
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('./img/bougies_1.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #ff8787;
+        }
+
+        section {
+            padding: 5rem 0;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .product-image {
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .product-info h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        .family-section {
+            background-color: var(--secondary-color);
+            color: white;
+            text-align: center;
+        }
+
+        .family-section p {
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+
+        footer {
+            background-color: var(--text-color);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .contact-section {
+            text-align: center;
+            padding: 5rem 0;
+            background-color: #f0f0f0;
+        }
+
+        .contact-section p {
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+
+        .contact-section a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contact-section a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+        nav .container {
+            position: relative;
+        }
+
+        .hamburger {
+            display: block;
+            z-index: 1001;
+        }
+
+        nav ul {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            width: 200px;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 1rem;
+            margin-right: 0%;
+            border-radius: 0 0 5px 5px;
+        }
+
+        nav ul.show {
+            display: flex;
+        }
+
+        nav ul li {
+            margin: 0.5rem 0;
+        }
+    }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="logo">
+                <a href="#" class="logo-link">Bougies Univers MM</a>
+            </div>
+            <button class="hamburger">☰</button>
+            <ul>
+                <li><a href="#about">À propos</a></li>
+                <li><a href="#products">Nos produits</a></li>
+                <li><a href="#gallery">Galerie</a></li>
+                <li><a href="#naturels">Produits Naturels</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container hero-content">
+            <h1>Bougies Univers MM</h1>
+            <p>Des bougies artisanales naturelles pour illuminer vos moments</p>
+            <a href="#products" class="btn">Découvrez nos produits</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="about">
+            <div class="container">
+                <h2>Notre passion et savoir-faire</h2>
+                <p>Chez Bougies Univers MM, nous créons des bougies artisanales naturelles avec amour et soin, en pensant à toute la famille. Chaque bougie est fabriquée à la main, en utilisant uniquement des ingrédients naturels et durables, pour des moments chaleureux et sécurisés.</p>
+            </div>
+        </section>
+
+        <section id="products">
+            <div class="container">
+                <h2>Nos créations pour tous</h2>
+                <div class="products">
+                    <div class="product-card">
+                        <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1602874801007-bd458bb1b8b6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&q=80');"></div>
+                        <div class="product-info">
+                            <h3>Lavande apaisante</h3>
+                            <p>Une bougie relaxante aux notes délicates de lavande, idéale pour les soirées douces!</p>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1605651202774-7d573fd3f12d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&q=80');"></div>
+                        <div class="product-info">
+                            <h3>Vanille gourmande</h3>
+                            <p>Une bougie chaleureuse aux arômes doux et sucrés, parfaite pour les goûters entre amis.</p>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1608263153703-caa6b0fd7bc7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&q=80');"></div>
+                        <div class="product-info">
+                            <h3>Forêt enchantée</h3>
+                            <p>Une bougie vivifiante aux senteurs boisées et fraîches, pour des aventures imaginaires en famille.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="naturels" class="family-section">
+            <div class="container">
+                <h2>Des produits naturels <br>pour une atmosphère sereine</h2>
+                <p>Nos bougies sont conçues pour créer une atmosphère chaleureuse et apaisante, parfaites pour des moments de qualité. Que ce soit pour une soirée cinéma, un dîner aux chandelles ou simplement pour se détendre, nos bougies ajoutent une touche de magie à chaque instant.</p>
+                <a href="mailto:bougies@universmm.com" class="btn">Contactez-nous!</a>
+            </div>
+        </section>
+
+        <section id="gallery">
+            <div class="container">
+                <h2>Galerie</h2>
+                <div class="gallery">
+                    <img src="https://images.unsplash.com/photo-1603006905003-be475563bc59?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&q=80" alt="Bougie 1">
+                    <img src="https://images.unsplash.com/photo-1602874801007-bd458bb1b8b6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&q=80" alt="Bougie 2">
+                    <img src="https://images.unsplash.com/photo-1605651202774-7d573fd3f12d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&q=80" alt="Bougie 3">
+                    <img src="https://images.unsplash.com/photo-1608263153703-caa6b0fd7bc7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&q=80" alt="Bougie 4">
+                    <img src="https://images.unsplash.com/photo-1602874801007-bd458bb1b8b6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&q=80" alt="Bougie 5">
+                    <img src="https://images.unsplash.com/photo-1605651202774-7d573fd3f12d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&q=80" alt="Bougie 6">
+                    <img src="https://images.unsplash.com/photo-1608263153703-caa6b0fd7bc7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&q=80" alt="Bougie 7">
+                    <img src="https://images.unsplash.com/photo-1601479604588-68d9e6d386b5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&q=80" alt="Bougie 8">
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <h2>Parlons bougies!</h2>
+                <p>Vous avez des questions ou une commande en tête?<br> N'hésitez pas à nous contacter : <a href="mailto:bougies@universmm.com">bougies@universmm.com</a></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Bougies Univers MM © 2024 par Univers MM est mis à disposition selon les termes de la licence CC BY-NC-ND 4.0</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const hamburger = document.querySelector('.hamburger');
+            const navUl = document.querySelector('nav ul');
+            const navLinks = document.querySelectorAll('nav ul li a');
+
+            hamburger.addEventListener('click', () => {
+                navUl.classList.toggle('show');
+            });
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    navUl.classList.remove('show');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
