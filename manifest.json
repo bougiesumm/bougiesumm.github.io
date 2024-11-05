@@ -12,9 +12,9 @@
             "type": "image/png"
         },
         {
-            "src": "assets/icons/icon_candle.jpg",
+            "src": "assets/icons/icon_candle.png",
             "sizes": "526x526",
-            "type": "image/jpg"
+            "type": "image/png"
         }
     ]
 }
