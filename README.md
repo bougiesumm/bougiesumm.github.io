@@ -103,4 +103,4 @@ The site will be available at: `https://yourusername.github.io/`
 Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## 📄 License
-This project is licensed under the CC BY-NC-ND 4.0 license - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the CC BY-NC-ND 4.0 license - see the [LICENSE](LICENSE.md) file for details.
