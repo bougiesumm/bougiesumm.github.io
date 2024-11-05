@@ -1,7 +1,6 @@
 # Bougies Univers MM 🕯️
 
 [![Website Status](https://img.shields.io/website?url=https%3A%2F%2Fbougiesumm.github.io%2Fbougiesumm.github.io)](https://bougies.universmm.com)
-[![GitHub license](https://img.shields.io/github/license/bougiesumm/bougiesumm.github.io)](https://github.com/bougiesumm/bougiesumm.github.io/blob/main/LICENSE)
 
 A modern, responsive website for Bougies Univers MM, showcasing artisanal and natural candles.
 
