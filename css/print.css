@@ -1,0 +1,27 @@
+@media print {
+    nav, footer, .hero {
+        display: none;
+    }
+    
+    body {
+        font-size: 12pt;
+        line-height: 1.5;
+    }
+    
+    .container {
+        width: 100%;
+    }
+    
+    a {
+        text-decoration: none;
+        color: #000;
+    }
+    
+    h1, h2, h3 {
+        page-break-after: avoid;
+    }
+    
+    img {
+        max-width: 100% !important;
+    }
+}

@@ -4,273 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bougies Univers MM - Bougies artisanales naturelles</title>
+    
+    <!-- Meta tags for SEO -->
+    <meta name="description" content="Bougies Univers MM - Artisan de bougies naturelles et durables. Découvrez notre collection de bougies artisanales faites à la main.">
+    <meta name="keywords" content="bougies artisanales, bougies naturelles, bougies fait main, bougie écologique">
+    <meta name="author" content="Bougies Univers MM">
+    
+    <!-- Open Graph tags -->
+    <meta property="og:title" content="Bougies Univers MM - Bougies artisanales naturelles">
+    <meta property="og:description" content="Découvrez nos bougies artisanales naturelles faites à la main">
+    <meta property="og:image" content="URL_TO_YOUR_MAIN_IMAGE">
+    <meta property="og:url" content="YOUR_WEBSITE_URL">
+
+    <!-- Preconnect to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary-color: #ff6b6b;
-            --secondary-color: #97299b;
-            --text-color: #2d3436;
-            --bg-color: #f9f7f7;
-            --accent-color: #feca57;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        nav {
-            background-color: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-
-        nav .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 0;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-
-        nav ul li {
-            margin-left: 2rem;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: var(--text-color);
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-
-        nav a:hover {
-            color: var(--primary-color);
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary-color);
-        }
-
-        .logo a {
-            color: var(--primary-color);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .logo a:hover {
-            color: var(--text-color);
-        }
-
-        .hamburger {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        .hero {
-            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('./img/bougiesumm_17.jpg');
-            background-size: cover;
-            background-position: center;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            text-align: center;
-            color: white;
-        }
-
-        .hero-content h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .hero-content p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: var(--primary-color);
-            color: white;
-            padding: 0.8rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: background-color 0.3s ease;
-        }
-
-        .btn:hover {
-            background-color: #ff8787;
-        }
-
-        section {
-            padding: 5rem 0;
-        }
-
-        h2 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            text-align: center;
-        }
-
-        .products {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .product-card {
-            background-color: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .product-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .product-image {
-            height: 250px;
-            background-size: cover;
-            background-position: center;
-        }
-
-        .product-info {
-            padding: 1.5rem;
-        }
-
-        .product-info h3 {
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
-        }
-
-        .gallery img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            border-radius: 15px;
-            transition: transform 0.3s ease;
-        }
-
-        .gallery img:hover {
-            transform: scale(1.05);
-        }
-
-        .family-section {
-            background-color: var(--secondary-color);
-            color: white;
-            text-align: center;
-        }
-
-        .family-section p {
-            max-width: 800px;
-            margin: 0 auto 2rem;
-        }
-
-        footer {
-            background-color: var(--text-color);
-            color: white;
-            text-align: center;
-            padding: 2rem 0;
-        }
-
-        .contact-section {
-            text-align: center;
-            padding: 5rem 0;
-            background-color: #f0f0f0;
-        }
-
-        .contact-section p {
-            max-width: 600px;
-            margin: 0 auto;
-            font-size: 1.1rem;
-        }
-
-        .contact-section a {
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        .contact-section a:hover {
-            text-decoration: underline;
-        }
-
-        @media (max-width: 768px) {
-        nav .container {
-            position: relative;
-        }
-
-        .hamburger {
-            display: block;
-            z-index: 1001;
-        }
-
-        nav ul {
-            display: none;
-            flex-direction: column;
-            position: absolute;
-            top: 100%;
-            right: 0;
-            width: 200px;
-            background-color: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            padding: 1rem;
-            margin-right: 0%;
-            border-radius: 0 0 5px 5px;
-        }
-
-        nav ul.show {
-            display: flex;
-        }
-
-        nav ul li {
-            margin: 0.5rem 0;
-        }
-    }
-    </style>
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/print.css" media="print">
+    
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="manifest.json">
 </head>
 <body>
-    <nav>
+    <nav role="navigation" aria-label="Menu principal">
         <div class="container">
             <div class="logo">
                 <a href="#" class="logo-link">Bougies Univers MM</a>
             </div>
-            <button class="hamburger">☰</button>
+            <button class="hamburger" aria-label="Menu" aria-expanded="false">☰</button>
             <ul>
                 <li><a href="#about">À propos</a></li>
                 <li><a href="#products">Nos produits</a></li>
@@ -302,21 +66,21 @@
                 <h2>Nos créations pour tous</h2>
                 <div class="products">
                     <div class="product-card">
-                        <div class="product-image" style="background-image: url('./img/bougiesumm_19.jpg');"></div>
+                        <div class="product-image" style="background-image: url('./assets/images/bougiesumm_19.jpg');"></div>
                         <div class="product-info">
                             <h3>Pêche et mangue</h3>
                             <p>Une bougie vivifiante aux délicates notes fruitées de pêche et de mangue</p>
                         </div>
                     </div>
                     <div class="product-card">
-                        <div class="product-image" style="background-image: url('./img/bougiesumm_23.jpg');"></div>
+                        <div class="product-image" style="background-image: url('./assets/images/bougiesumm_23.jpg');"></div>
                         <div class="product-info">
                             <h3>Vanille chocolatée</h3>
                             <p>Une bougie chaleureuse aux arômes doux et sucrés</p>
                         </div>
                     </div>
                     <div class="product-card">
-                        <div class="product-image" style="background-image: url('./img/bougiesumm_21.jpg');"></div>
+                        <div class="product-image" style="background-image: url('./assets/images/bougiesumm_21.jpg');"></div>
                         <div class="product-info">
                             <h3>Jasmin et orchidée</h3>
                             <p>Une bougie relaxante aux douces odeurs florales</p>
@@ -338,26 +102,26 @@
             <div class="container">
                 <h2>Galerie</h2>
                 <div class="gallery">
-                    <img src="./img/bougiesumm_2.jpg" alt="Bougie 2">
-                    <img src="./img/bougiesumm_3.jpg" alt="Bougie 3">
-                    <img src="./img/bougiesumm_4.jpg" alt="Bougie 4">
-                    <img src="./img/bougiesumm_5.jpg" alt="Bougie 5">
-                    <img src="./img/bougiesumm_6.jpg" alt="Bougie 6">
-                    <img src="./img/bougiesumm_7.jpg" alt="Bougie 7">
-                    <img src="./img/bougiesumm_9.jpg" alt="Bougie 9">
-                    <img src="./img/bougiesumm_10.jpg" alt="Bougie 10">
-                    <img src="./img/bougiesumm_11.jpg" alt="Bougie 11">
-                    <img src="./img/bougiesumm_12.jpg" alt="Bougie 12">
-                    <img src="./img/bougiesumm_13.jpg" alt="Bougie 13">
-                    <img src="./img/bougiesumm_14.jpg" alt="Bougie 14">
-                    <img src="./img/bougiesumm_15.jpg" alt="Bougie 15">
-                    <img src="./img/bougiesumm_16.jpg" alt="Bougie 16">
-                    <img src="./img/bougiesumm_17.jpg" alt="Bougie 17">
-                    <img src="./img/bougiesumm_18.jpg" alt="Bougie 18">
-                    <img src="./img/bougiesumm_19.jpg" alt="Bougie 19">
-                    <img src="./img/bougiesumm_20.jpg" alt="Bougie 20">
-                    <img src="./img/bougiesumm_21.jpg" alt="Bougie 21">
-                    <img src="./img/bougiesumm_23.jpg" alt="Bougie 23">
+                    <img src="./assets/images/bougiesumm_2.jpg" alt="Bougie 2">
+                    <img src="./assets/images/bougiesumm_3.jpg" alt="Bougie 3">
+                    <img src="./assets/images/bougiesumm_4.jpg" alt="Bougie 4">
+                    <img src="./assets/images/bougiesumm_5.jpg" alt="Bougie 5">
+                    <img src="./assets/images/bougiesumm_6.jpg" alt="Bougie 6">
+                    <img src="./assets/images/bougiesumm_7.jpg" alt="Bougie 7">
+                    <img src="./assets/images/bougiesumm_9.jpg" alt="Bougie 9">
+                    <img src="./assets/images/bougiesumm_10.jpg" alt="Bougie 10">
+                    <img src="./assets/images/bougiesumm_11.jpg" alt="Bougie 11">
+                    <img src="./assets/images/bougiesumm_12.jpg" alt="Bougie 12">
+                    <img src="./assets/images/bougiesumm_13.jpg" alt="Bougie 13">
+                    <img src="./assets/images/bougiesumm_14.jpg" alt="Bougie 14">
+                    <img src="./assets/images/bougiesumm_15.jpg" alt="Bougie 15">
+                    <img src="./assets/images/bougiesumm_16.jpg" alt="Bougie 16">
+                    <img src="./assets/images/bougiesumm_17.jpg" alt="Bougie 17">
+                    <img src="./assets/images/bougiesumm_18.jpg" alt="Bougie 18">
+                    <img src="./assets/images/bougiesumm_19.jpg" alt="Bougie 19">
+                    <img src="./assets/images/bougiesumm_20.jpg" alt="Bougie 20">
+                    <img src="./assets/images/bougiesumm_21.jpg" alt="Bougie 21">
+                    <img src="./assets/images/bougiesumm_23.jpg" alt="Bougie 23">
                 </div>
             </div>
         </section>
@@ -376,22 +140,13 @@
         </div>
     </footer>
 
+    <!-- Scripts -->
+    <script src="js/script.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', (event) => {
-            const hamburger = document.querySelector('.hamburger');
-            const navUl = document.querySelector('nav ul');
-            const navLinks = document.querySelectorAll('nav ul li a');
-
-            hamburger.addEventListener('click', () => {
-                navUl.classList.toggle('show');
-            });
-
-            navLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    navUl.classList.remove('show');
-                });
-            });
-        });
+        // Register Service Worker
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/service-worker.js');
+        }
     </script>
 </body>
 </html>
